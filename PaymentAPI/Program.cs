@@ -17,6 +17,12 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    await using (var score = app.Services.CreateAsyncScope())
+    {
+        var dbContext = score.ServiceProvider.GetRequiredService<PaymentDetailContext>();
+        await dbContext.Database.MigrateAsync();
+    }
+    
     app.UseSwagger();
     app.UseSwaggerUI();
 }

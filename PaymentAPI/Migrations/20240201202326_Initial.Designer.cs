@@ -10,7 +10,7 @@ using PaymentAPI.Models;
 
 namespace PaymentAPI.Migrations
 {
-    [DbContext(typeof(PaymentDetailContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20240201202326_Initial")]
     partial class Initial
     {

@@ -8,9 +8,9 @@ namespace PaymentAPI.Controllers;
 [ApiController]
 public class PaymentDetailsController : ControllerBase
 {
-    private readonly PaymentDetailContext _context;
+    private readonly ApplicationDbContext _context;
 
-    public PaymentDetailsController(PaymentDetailContext context)
+    public PaymentDetailsController(ApplicationDbContext context)
     {
         _context = context;
     }

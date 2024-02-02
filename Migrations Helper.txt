@@ -1,1 +1,1 @@
-dotnet ef migrations add --project .\PaymentAPI\PaymentAPI.csproj --startup-project .\PaymentAPI\PaymentAPI.csproj --context PaymentAPI.Models.PaymentDetailContext --configuration Debug Initial --output-dir Migrations
+dotnet ef migrations add --project .\PaymentAPI\PaymentAPI.csproj --startup-project .\PaymentAPI\PaymentAPI.csproj --context PaymentAPI.Models.ApplicationDbContext --configuration Debug Initial --output-dir Migrations

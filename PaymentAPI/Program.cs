@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<PaymentDetailContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("Local")));
+builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("Local")));
 
 var app = builder.Build();
 
@@ -19,7 +19,7 @@ if (app.Environment.IsDevelopment())
 {
     await using (var score = app.Services.CreateAsyncScope())
     {
-        var dbContext = score.ServiceProvider.GetRequiredService<PaymentDetailContext>();
+        var dbContext = score.ServiceProvider.GetRequiredService<ApplicationDbContext>();
         await dbContext.Database.MigrateAsync();
     }
     
